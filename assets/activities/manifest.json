@@ -1,0 +1,67 @@
+{
+  "images": [
+    {
+      "id": "activity-01",
+      "file": "images/activity-01.jpg",
+      "status": "ready",
+      "source": "https://drive.google.com/file/d/1zaDX03St-gxGTubz6UfOhyqiMzAQvt6e/view",
+      "width": 7008,
+      "height": 4672,
+      "sizeBytes": 34410473,
+      "sha256": "ec66e3eb65d016f3da2d8bcccd9fbe54c173158452e600353188f26adb5cf8af",
+      "title": null,
+      "alt": null
+    },
+    {
+      "id": "activity-02",
+      "file": "images/activity-02.jpg",
+      "status": "ready",
+      "source": "https://drive.google.com/file/d/1XXGo1cwKb1zqFloi_zyVZdS7eKKPEW4N/view",
+      "width": 7008,
+      "height": 4672,
+      "sizeBytes": 12024737,
+      "sha256": "5d60b73e3dea69ee168c6d92738eef4a5d1fc5ab4ddeca74448f6bd8a3d10d76",
+      "title": null,
+      "alt": null
+    },
+    {
+      "id": "activity-03",
+      "file": "images/activity-03.jpg",
+      "status": "ready",
+      "source": "https://drive.google.com/file/d/1635lIQ3vjBeVKjgj_Y0slctZY6uExZbV/view",
+      "width": 7008,
+      "height": 4672,
+      "sizeBytes": 31431560,
+      "sha256": "773b0046ad36bb5e2de049b813936cfc76c19e50747a0c0210abe03b966bbb84",
+      "title": null,
+      "alt": null
+    }
+  ],
+  "videos": [
+    {
+      "id": "video-01",
+      "status": "pending",
+      "file": null,
+      "poster": null,
+      "title": null,
+      "description": null
+    },
+    {
+      "id": "video-02",
+      "status": "pending",
+      "file": null,
+      "poster": null,
+      "title": null,
+      "description": null
+    },
+    {
+      "id": "video-03",
+      "status": "pending",
+      "file": null,
+      "poster": null,
+      "title": null,
+      "description": null
+    }
+  ],
+  "additionalImages": []
+}
