@@ -62,33 +62,38 @@ document.querySelectorAll('.hero,.team').forEach(region=>{
  motionPreference.addEventListener('change',reset);
 });
 
-// Rolling impact figures: static, accessible totals remain available without motion or JS.
+// Count impact totals from zero when the section enters the viewport.
 (()=>{
  const section=document.querySelector('.impact');
  if(!section)return;
- if(!motionPreference.matches){
-  section.querySelectorAll('.impact-odometer').forEach(counter=>{
-   const digits=counter.dataset.value.split('').map((value,index)=>{
-    const window=document.createElement('span');window.className='impact-digit';
-    const reel=document.createElement('span');reel.className='impact-digit-reel';
-    reel.style.setProperty('--digit-steps',String(20+Number(value)));
-    reel.style.setProperty('--digit-delay',`${index*85}ms`);
-    for(let number=0;number<=20+Number(value);number++){
-     const glyph=document.createElement('span');glyph.textContent=String(number%10);reel.append(glyph);
-    }
-    window.append(reel);return window;
-   });
-   counter.replaceChildren(...digits);
-  });
+ const counters=Array.from(section.querySelectorAll('.impact-odometer')).map(counter=>{
+  const value=document.createElement('span');value.className='impact-count-value';value.textContent='0';
+  counter.classList.add('is-counting');counter.replaceChildren(value);
+  return {value,target:Number(counter.dataset.value)};
+ });
+ let started=false,frame=0,startTime=null;
+ const duration=2600;
+ function tick(now){
+  if(startTime===null)startTime=now;
+  const progress=Math.min((now-startTime)/duration,1);
+  const eased=1-Math.pow(1-progress,2);
+  counters.forEach(({value,target})=>{value.textContent=String(progress===1?target:Math.floor(target*eased))});
+  frame=progress<1?requestAnimationFrame(tick):0;
  }
- function show(){section.classList.add('is-impact-visible')}
+ function start(){
+  if(started)return;
+  started=true;section.classList.add('is-impact-visible');frame=requestAnimationFrame(tick);
+ }
  if('IntersectionObserver' in window){
   const observer=new IntersectionObserver(entries=>{
-   if(entries.some(entry=>entry.isIntersecting)){
-    requestAnimationFrame(()=>requestAnimationFrame(show));observer.disconnect();
-   }
-  },{threshold:.15});
-  observer.observe(section);
- }else{requestAnimationFrame(()=>requestAnimationFrame(show))}
- motionPreference.addEventListener('change',event=>{if(event.matches)show()});
+   if(entries.some(entry=>entry.isIntersecting)){start();observer.disconnect()}
+  },{threshold:.15});observer.observe(section);
+ }else{start()}
+ // Finish cleanly if the page is backgrounded during the count.
+ document.addEventListener('visibilitychange',()=>{
+  if(document.hidden && started && frame){
+   cancelAnimationFrame(frame);frame=0;
+   counters.forEach(({value,target})=>{value.textContent=String(target)});
+  }
+ });
 })();
