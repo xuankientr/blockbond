@@ -72,7 +72,7 @@ document.querySelectorAll('.hero,.team').forEach(region=>{
   return {value,target:Number(counter.dataset.value)};
  });
  let started=false,frame=0,startTime=null;
- const duration=2600;
+ const duration=1700;
  function tick(now){
   if(startTime===null)startTime=now;
   const progress=Math.min((now-startTime)/duration,1);
