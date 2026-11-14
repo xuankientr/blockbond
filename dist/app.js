@@ -61,3 +61,34 @@ document.querySelectorAll('.hero,.team').forEach(region=>{
  window.addEventListener('scroll',reset,{passive:true});
  motionPreference.addEventListener('change',reset);
 });
+
+// Rolling impact figures: static, accessible totals remain available without motion or JS.
+(()=>{
+ const section=document.querySelector('.impact');
+ if(!section)return;
+ if(!motionPreference.matches){
+  section.querySelectorAll('.impact-odometer').forEach(counter=>{
+   const digits=counter.dataset.value.split('').map((value,index)=>{
+    const window=document.createElement('span');window.className='impact-digit';
+    const reel=document.createElement('span');reel.className='impact-digit-reel';
+    reel.style.setProperty('--digit-steps',String(20+Number(value)));
+    reel.style.setProperty('--digit-delay',`${index*85}ms`);
+    for(let number=0;number<=20+Number(value);number++){
+     const glyph=document.createElement('span');glyph.textContent=String(number%10);reel.append(glyph);
+    }
+    window.append(reel);return window;
+   });
+   counter.replaceChildren(...digits);
+  });
+ }
+ function show(){section.classList.add('is-impact-visible')}
+ if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{
+   if(entries.some(entry=>entry.isIntersecting)){
+    requestAnimationFrame(()=>requestAnimationFrame(show));observer.disconnect();
+   }
+  },{threshold:.15});
+  observer.observe(section);
+ }else{requestAnimationFrame(()=>requestAnimationFrame(show))}
+ motionPreference.addEventListener('change',event=>{if(event.matches)show()});
+})();

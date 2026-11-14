@@ -101,3 +101,48 @@
 
 .team{overflow:hidden}
 .team>.section-top,.team>.team-grid{position:relative;z-index:1}
+
+/* The impact section is the visual high point: rolling figures and a living network. */
+.impact{position:relative;isolation:isolate;overflow:hidden;margin:68px 3% 0;padding:62px 4% 26px;border:1px solid #2d6146;border-radius:12px;background:#103e2d;color:#f6f8ed}
+.impact-grid-pattern{position:absolute;inset:0;z-index:-1;background-image:radial-gradient(#aec5a3 1px,transparent 1px);background-size:25px 25px;opacity:.065;mask-image:linear-gradient(100deg,transparent 25%,#000)}
+.impact-aura{position:absolute;z-index:-1;pointer-events:none;width:650px;height:650px;top:-330px;right:-110px;border-radius:50%;background:radial-gradient(ellipse,rgba(237,188,73,.2),rgba(74,142,85,.12) 37%,transparent 68%)}
+.impact-network{position:absolute;z-index:-1;pointer-events:none;right:-35px;top:-90px;width:560px;height:400px;stroke:#a2c399;stroke-width:1;opacity:.16}
+.impact-network-node{fill:var(--yellow);stroke:none}
+.impact-orbit-trace{stroke:var(--yellow);stroke-width:2.5;stroke-dasharray:80 900;transform-origin:350px 200px}
+.impact-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin-bottom:58px}
+.impact-eyebrow{display:flex;align-items:center;gap:10px;font-size:9px;font-weight:700;letter-spacing:1.6px;color:#c7d4ba;margin-bottom:24px}
+.impact-eyebrow>span{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 5px #edbc4915}
+.impact h2{font-size:clamp(36px,4.2vw,61px);line-height:1.14;letter-spacing:-2.3px}
+.impact h2>span{font-family:Georgia,serif;font-style:italic;font-weight:400;color:var(--yellow)}
+.impact-intro>p{font-size:12px;line-height:1.9;color:#b4c8af;margin:0 0 4px;flex:none}
+.impact-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.impact-stat{position:relative;min-width:0;padding:23px 24px 27px 0;border-top:1px solid #91b48a40}
+.impact-stat+.impact-stat{padding-left:24px;border-left:1px solid #91b48a35}
+.impact-stat-top{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9fb59a;font-size:8px;letter-spacing:1.1px;font-weight:600}
+.impact-stat-top>span:last-child{font-size:20px;color:#91ad81}
+.impact-number{display:flex;align-items:baseline;white-space:nowrap;gap:1px;margin:34px 0 24px;color:var(--yellow);font-size:clamp(55px,6.5vw,100px);line-height:1;font-weight:800;letter-spacing:-5px;font-variant-numeric:tabular-nums}
+.impact-odometer{display:inline-flex;letter-spacing:-5px;line-height:1}
+.impact-unit{font-size:.69em;letter-spacing:-3px;margin-left:3px}
+.impact-stat h3{font-size:15px;letter-spacing:-.2px;font-weight:600;margin:0;line-height:1.5}
+.impact-context{font-size:10px;color:#9fb59a;line-height:1.8;margin:5px 0 0}
+.impact-digit{display:block;height:1em;overflow:hidden}
+.impact-digit-reel{display:block;transform:translate3d(0,0,0);transition:transform 2.4s cubic-bezier(.16,.85,.22,1);transition-delay:calc(var(--stat-delay,0ms) + var(--digit-delay,0ms))}
+.impact-digit-reel>span{display:block;height:1em;line-height:1}
+.impact.is-impact-visible .impact-digit-reel{transform:translate3d(0,calc(var(--digit-steps)*-1em),0)}
+.impact-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:24px;margin-top:10px;border-top:1px solid #91b48a35}
+.impact-footer>span{color:#89a180;font-size:8px;letter-spacing:1.2px}
+.impact-footer>a{display:flex;align-items:center;gap:22px;font-size:11px;color:#e2e9d9;font-weight:600}
+.impact-footer>a>span{color:var(--yellow);font-size:19px;transition:transform .2s ease}
+.impact-footer>a:hover>span{transform:translate(3px,-3px)}
+@media(prefers-reduced-motion:no-preference){
+ .impact.is-impact-visible .impact-aura{animation:impact-aura-drift 14s ease-in-out infinite alternate}
+ .impact.is-impact-visible .impact-orbit-trace{animation:impact-orbit-turn 24s linear infinite}
+ .impact.is-impact-visible .impact-stat{animation:impact-stat-arrive .85s cubic-bezier(.22,1,.36,1) both;animation-delay:var(--stat-delay)}
+}
+@keyframes impact-aura-drift{from{transform:translate(-45px,15px) scale(.92)}to{transform:translate(30px,65px) scale(1.1)}}
+@keyframes impact-orbit-turn{to{transform:rotate(360deg)}}
+@keyframes impact-stat-arrive{from{opacity:0;translate:0 16px}to{opacity:1;translate:0 0}}
+@media(max-width:1100px){.impact-stat{padding-right:18px}.impact-stat+.impact-stat{padding-left:18px}.impact-number{font-size:6.2vw;letter-spacing:-3px}.impact-odometer{letter-spacing:-3px}.impact-unit{letter-spacing:-2px}.impact-intro>p{font-size:11px}}
+@media(max-width:850px){.impact{padding:44px 5% 24px}.impact-intro{display:block;margin-bottom:35px}.impact-intro>p{margin-top:22px}.impact-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.impact-stat{padding:21px 20px 26px 0}.impact-stat+.impact-stat{padding:21px 20px 26px 0;border-left:0}.impact-stat:nth-child(even){padding-left:25px;padding-right:0;border-left:1px solid #91b48a35}.impact-number{font-size:85px;margin:25px 0 18px}.impact-network{right:-210px;top:-65px;opacity:.13}.impact-footer>span{font-size:7px;max-width:160px;line-height:1.9}}
+@media(max-width:500px){.impact{margin:44px 4% 0;padding:35px 6% 23px}.impact h2{font-size:34px;letter-spacing:-1.5px}.impact-eyebrow{font-size:7px;letter-spacing:1.1px}.impact-number{font-size:clamp(49px,14vw,70px);letter-spacing:-2.5px;margin:23px 0 17px}.impact-odometer{letter-spacing:-2.5px}.impact-stat:nth-child(even){padding-left:16px}.impact-stat{padding-right:14px}.impact-stat+.impact-stat{padding-right:14px}.impact-stat-top{font-size:6px;letter-spacing:.7px}.impact-stat-top>span:last-child{font-size:16px}.impact-stat h3{font-size:13px}.impact-context{font-size:9px}.impact-intro>p{font-size:11px}.impact-footer{align-items:flex-start;flex-direction:column;gap:14px}.impact-footer>span{max-width:none}.impact-footer>a{font-size:11px}.impact-aura{right:-300px;top:-290px}}
+@media(prefers-reduced-motion:reduce){.impact-digit-reel{transition:none;transform:translate3d(0,calc(var(--digit-steps)*-1em),0)}}
