@@ -40,11 +40,19 @@
   "videos": [
     {
       "id": "video-01",
-      "status": "pending",
-      "file": null,
+      "status": "ready",
+      "file": "videos/activity-video-01.mp4",
       "poster": null,
       "title": null,
-      "description": null
+      "description": null,
+      "source": "https://drive.google.com/file/d/1N8RFZ5Ky7kLh9-hgHf7aUAO3VG7PjcH2/view",
+      "width": 2560,
+      "height": 1440,
+      "durationSeconds": 53.013333,
+      "sizeBytes": 62522803,
+      "sha256": "539763fe340bb743ec02450c3d7e56f2b6f1b734a40903147ace981a08932acf",
+      "videoCodec": "h264",
+      "audioCodec": "aac"
     },
     {
       "id": "video-02",
