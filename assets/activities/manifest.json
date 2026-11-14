@@ -10,7 +10,9 @@
       "sizeBytes": 34410473,
       "sha256": "ec66e3eb65d016f3da2d8bcccd9fbe54c173158452e600353188f26adb5cf8af",
       "title": null,
-      "alt": null
+      "alt": null,
+      "webFile": "assets/activities/activity-01.webp",
+      "thumbnail": "assets/activities/activity-01-small.webp"
     },
     {
       "id": "activity-02",
@@ -22,7 +24,9 @@
       "sizeBytes": 12024737,
       "sha256": "5d60b73e3dea69ee168c6d92738eef4a5d1fc5ab4ddeca74448f6bd8a3d10d76",
       "title": null,
-      "alt": null
+      "alt": null,
+      "webFile": "assets/activities/activity-02.webp",
+      "thumbnail": "assets/activities/activity-02-small.webp"
     },
     {
       "id": "activity-03",
@@ -34,7 +38,9 @@
       "sizeBytes": 31431560,
       "sha256": "773b0046ad36bb5e2de049b813936cfc76c19e50747a0c0210abe03b966bbb84",
       "title": null,
-      "alt": null
+      "alt": null,
+      "webFile": "assets/activities/activity-03.webp",
+      "thumbnail": "assets/activities/activity-03-small.webp"
     }
   ],
   "videos": [
@@ -42,7 +48,7 @@
       "id": "video-01",
       "status": "ready",
       "file": "videos/activity-video-01.mp4",
-      "poster": null,
+      "poster": "assets/activities/video-poster.webp",
       "title": null,
       "description": null,
       "source": "https://drive.google.com/file/d/1N8RFZ5Ky7kLh9-hgHf7aUAO3VG7PjcH2/view",
@@ -52,23 +58,11 @@
       "sizeBytes": 62522803,
       "sha256": "539763fe340bb743ec02450c3d7e56f2b6f1b734a40903147ace981a08932acf",
       "videoCodec": "h264",
-      "audioCodec": "aac"
-    },
-    {
-      "id": "video-02",
-      "status": "pending",
-      "file": null,
-      "poster": null,
-      "title": null,
-      "description": null
-    },
-    {
-      "id": "video-03",
-      "status": "pending",
-      "file": null,
-      "poster": null,
-      "title": null,
-      "description": null
+      "audioCodec": "aac",
+      "webFile": "assets/activities/activity-video-01.mp4",
+      "webSizeBytes": 15272276,
+      "webWidth": 1920,
+      "webHeight": 1080
     }
   ],
   "additionalImages": []

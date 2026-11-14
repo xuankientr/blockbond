@@ -1,17 +1,11 @@
-# Activity media assets
+# Activity media
 
-Three original JPEG photographs supplied by the site owner are stored in `images/`, in the same order as the supplied Drive links. Original bytes are preserved. Metadata and source links are recorded in `manifest.json`.
+The original three JPEG photos and one MP4 video supplied by the site owner are preserved here. Source links, original dimensions and checksums are recorded in `manifest.json`.
 
-These source images are 7008 × 4672 pixels each, totaling about 78 MB. They are kept outside the deployed `dist/` directory so staging the media does not add large unused files to the current website. Create web-sized versions in `dist/assets/activities/` when implementing the activities section.
+The published **BlockBond in action** section uses optimized versions in `dist/assets/activities/`: responsive WebP photographs, a video poster, and a 1080p H.264/AAC MP4 with fast-start metadata. Originals remain outside `dist/`. The video only loads when a visitor starts playback (`preload="none"`), and the photographs support an accessible lightbox.
 
-## Videos
+## Future additions
 
-`videos/activity-video-01.mp4` is the original first supplied video, preserved unchanged: H.264/AAC MP4, 2560 × 1440, approximately 53 seconds. It is stored outside the deployed `dist/` directory. Metadata and the Drive source are in `manifest.json`.
+`images/pending/` is reserved for additional photographs. The current section displays one video and three photos. Activity names, dates and other specific event details have not been invented; captions describe only the visible community moments.
 
-## Awaiting content
-
-- `videos/`: the first video is ready; two remaining video slots still have null file paths in the manifest.
-- `images/pending/`: reserved for additional photographs.
-- Event titles, descriptions, alt text and video posters remain blank until the actual content is supplied.
-
-No placeholder files pretend to be playable videos, and this asset update does not add media to the current page.
+To add another photo, add its original to this folder, create web-sized versions in `dist/assets/activities/`, and add a button with the existing `activity-photo` structure to the gallery. Gallery navigation automatically includes it.

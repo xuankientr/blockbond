@@ -97,3 +97,44 @@ document.querySelectorAll('.hero,.team').forEach(region=>{
   }
  });
 })();
+
+// Native, click-to-play video: no autoplay and no media download before interaction.
+(()=>{
+ const video=document.querySelector('#activity-video');
+ const play=document.querySelector('.activities-play');
+ if(!video || !play)return;
+ const status=document.querySelector('#activity-video-status');
+ play.hidden=false;
+ play.addEventListener('click',async()=>{
+  play.disabled=true;play.querySelector('span').textContent='Loading…';status.textContent='';
+  try{await video.play()}
+  catch{status.textContent='Please use the video controls to start playback.';play.hidden=false}
+  finally{play.disabled=false;play.querySelector('span').textContent='Play the film'}
+ });
+ video.addEventListener('play',()=>{play.hidden=true});
+ video.addEventListener('pause',()=>{play.hidden=false});
+ video.addEventListener('ended',()=>{play.hidden=false});
+ video.addEventListener('error',()=>{play.hidden=false;status.textContent='The video could not load. Please try again.'});
+})();
+
+// Accessible photo lightbox with previous/next buttons and arrow-key navigation.
+(()=>{
+ const photos=Array.from(document.querySelectorAll('.activity-photo'));
+ const viewer=document.querySelector('#activity-lightbox');
+ if(!photos.length || !viewer)return;
+ let selected=0;
+ function display(index){
+  selected=(index+photos.length)%photos.length;
+  const photo=photos[selected];const image=document.querySelector('#activity-lightbox-image');
+  image.src=photo.dataset.full;image.alt=photo.querySelector('img').alt;
+  document.querySelector('#activity-lightbox-caption').textContent=photo.dataset.caption;
+  document.querySelector('#activity-lightbox-count').textContent=`${String(selected+1).padStart(2,'0')} / ${String(photos.length).padStart(2,'0')}`;
+ }
+ photos.forEach((photo,index)=>photo.addEventListener('click',()=>{display(index);viewer.showModal()}));
+ document.querySelector('#activity-photo-previous').addEventListener('click',()=>display(selected-1));
+ document.querySelector('#activity-photo-next').addEventListener('click',()=>display(selected+1));
+ viewer.addEventListener('keydown',event=>{
+  if(event.key==='ArrowLeft'){event.preventDefault();display(selected-1)}
+  if(event.key==='ArrowRight'){event.preventDefault();display(selected+1)}
+ });
+})();
