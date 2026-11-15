@@ -95,7 +95,7 @@
 .team-social:disabled{opacity:.45;cursor:default}
 /* A visible ambient light layer, beneath text and artwork. */
 .hero,.team{position:relative;isolation:isolate}
-.section-pointer-glow{position:absolute;left:0;top:0;width:560px;height:560px;border-radius:50%;background:radial-gradient(ellipse at 35% 40%,rgba(63,135,88,.25),transparent 62%),radial-gradient(ellipse at 68% 60%,rgba(237,188,73,.36),transparent 62%);transform:translate3d(var(--section-glow-x,0px),var(--section-glow-y,0px),0) translate(-50%,-50%);opacity:0;pointer-events:none;z-index:0;transition:opacity .35s ease}
+.section-pointer-glow{position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;background:radial-gradient(ellipse at 35% 40%,rgba(63,135,88,.25),transparent 62%),radial-gradient(ellipse at 68% 60%,rgba(237,188,73,.36),transparent 62%);transform:translate3d(var(--section-glow-x,0px),var(--section-glow-y,0px),0) translate(-50%,-50%);opacity:0;pointer-events:none;z-index:0;transition:opacity .35s ease}
 .has-pointer-glow>.section-pointer-glow{opacity:1}
 .hero>.hero-copy,.hero>.hero-art{position:relative;z-index:1}
 
