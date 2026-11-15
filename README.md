@@ -28,9 +28,6 @@ Import this GitHub repository into Vercel. Use the repository root as the Root D
 
 Once linked, pushes to `main` can trigger production deployments through Vercel's Git integration.
 
-## Editing team profiles
-
-Update names, roles, biography text and X URLs in `dist/index.html`. LinkedIn icons currently have no URLs and are disabled. Replace the relevant disabled button with an anchor when a profile URL is supplied.
 
 ## Project brief
 

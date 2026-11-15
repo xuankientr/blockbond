@@ -15,16 +15,16 @@ if('IntersectionObserver' in window && !motionPreference.matches){
  const revealObserver=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target)}});
  },{threshold:0.1});
- document.querySelectorAll('.about-grid,.principles>div,.section-top,.service-card,.approach-intro,.steps>div,.team-card,.contact').forEach(element=>{
+ document.querySelectorAll('.about-grid,.principles>div,.section-top,.service-card,.approach-intro,.steps>div,.contact').forEach(element=>{
   revealObserver.observe(element);
   element.classList.add('reveal-ready');
-  if(element.matches('.service-card,.principles>div,.team-card'))element.style.setProperty('--reveal-delay',`${Array.from(element.parentElement.children).indexOf(element)*65}ms`);
+  if(element.matches('.service-card,.principles>div'))element.style.setProperty('--reveal-delay',`${Array.from(element.parentElement.children).indexOf(element)*65}ms`);
  });
  motionPreference.addEventListener('change',event=>{if(event.matches){revealObserver.disconnect();document.querySelectorAll('.reveal-ready').forEach(element=>element.classList.add('is-visible'))}});
 }
 
 // Follow real mouse movement; reduced-motion visitors get immediate positioning.
-document.querySelectorAll('.hero,.team').forEach(region=>{
+document.querySelectorAll('.hero').forEach(region=>{
  let frame=0,active=false,x=0,y=0,targetX=0,targetY=0;
  function position(){
   region.style.setProperty('--section-glow-x',`${x}px`);
