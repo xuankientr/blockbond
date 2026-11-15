@@ -226,3 +226,8 @@
 .activity-lightbox-controls>span{font-size:8px;letter-spacing:1.3px;color:#85937a}
 @media(min-width:701px) and (max-width:1100px){header{gap:18px}nav{gap:17px;font-size:10px}header>.button.small{gap:16px}.activities-gallery{gap:15px}}
 @media(max-width:700px){.activities-heading{display:block;margin-bottom:26px}.activities-heading h2{font-size:36px}.activities-heading>p{font-size:11px;margin-top:18px}.activities-play{padding:12px 17px;font-size:10px;gap:8px}.activities-play svg{width:14px;height:14px}.activities-feature>figcaption{padding:17px 0 22px}.activities-feature figcaption p{font-size:11px;max-width:240px;line-height:1.7}.activities-label{font-size:7px}.activities-duration{gap:12px;font-size:10px}.activities-photo-heading{display:block;margin-top:28px}.activities-photo-heading h3{font-size:19px}.activities-photo-heading>span{display:block;margin-top:10px;font-size:7px}.activities-gallery{grid-template-columns:1fr;gap:17px}.activity-photo-caption{font-size:12px;padding:12px 0 4px}.activity-lightbox{width:calc(100% - 20px);padding:46px 15px 16px}.activity-lightbox figure>img{max-height:64vh}.activity-lightbox figcaption>p{font-size:11px}.activity-lightbox-controls{gap:18px}}
+
+/* Keep the gallery and the following introduction visually connected. */
+.activities.section{padding-bottom:42px}
+.activities+.about.section{padding-top:42px}
+@media(max-width:700px){.activities.section{padding-bottom:28px}.activities+.about.section{padding-top:32px}}
