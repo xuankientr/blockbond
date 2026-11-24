@@ -258,3 +258,8 @@
 .ticker-partner img.partner-noctra{filter:none;opacity:1}
 
 .site-footer .footer-social:hover{background:var(--green);border-color:var(--green);color:#fff}
+
+/* Preserve the transparent, two-line Kingdom Raids wordmark and its brand colors. */
+.ticker-partner--kingdom{height:44px}
+.ticker-partner img.partner-kingdom{height:44px;width:112px;filter:none;opacity:1}
+@media(max-width:700px){.ticker-partner--kingdom{height:38px}.ticker-partner img.partner-kingdom{height:38px;width:96px}}

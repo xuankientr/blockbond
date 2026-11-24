@@ -10,3 +10,5 @@ Partner artwork from first-party project websites and files supplied by the site
 Logo paths and proportions preserved. CSS displays the logos in monochrome for legibility on the pale ticker background.
 
 - Noctra: original PNG from https://noctra.ai/_next/static/media/img-logo-text-primary.037cb203.png, matching the image supplied by the site owner. Stored unchanged as `dist/assets/partners/noctra.png`; no vector tracing or color filter.
+
+- Kingdom Raids: logo extracted from the site owner’s promotional image with its background and surrounding scene removed. Full transparent edit retained in `assets/partners/kingdom-raids-logo.png`; optimized transparent WebP served from `dist/assets/partners/kingdom-raids.webp`. Original wordmark colors are displayed without the ticker’s monochrome filter.
