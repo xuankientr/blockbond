@@ -23,45 +23,6 @@ if('IntersectionObserver' in window && !motionPreference.matches){
  motionPreference.addEventListener('change',event=>{if(event.matches){revealObserver.disconnect();document.querySelectorAll('.reveal-ready').forEach(element=>element.classList.add('is-visible'))}});
 }
 
-// Follow real mouse movement; reduced-motion visitors get immediate positioning.
-document.querySelectorAll('.hero').forEach(region=>{
- let frame=0,active=false,x=0,y=0,targetX=0,targetY=0;
- function position(){
-  region.style.setProperty('--section-glow-x',`${x}px`);
-  region.style.setProperty('--section-glow-y',`${y}px`);
- }
- function paint(){
-  frame=0;
-  x+=(targetX-x)*.18;y+=(targetY-y)*.18;position();
-  if(active && (Math.abs(targetX-x)>.2 || Math.abs(targetY-y)>.2))frame=requestAnimationFrame(paint);
- }
- function reset(){
-  active=false;region.classList.remove('has-pointer-glow');
-  if(frame)cancelAnimationFrame(frame);
-  frame=0;
- }
- function follow(event){
-  if(event.pointerType==='touch' || event.sourceCapabilities?.firesTouchEvents)return;
-  const bounds=region.getBoundingClientRect();
-  targetX=event.clientX-bounds.left;targetY=event.clientY-bounds.top;
-  if(!active || motionPreference.matches){
-   x=targetX;y=targetY;position();
-   if(frame)cancelAnimationFrame(frame);
-   frame=0;
-  }
-  active=true;region.classList.add('has-pointer-glow');
-  if(!motionPreference.matches && !frame)frame=requestAnimationFrame(paint);
- }
- region.addEventListener('pointermove',follow,{passive:true});
- region.addEventListener('mousemove',follow,{passive:true});
- region.addEventListener('pointerleave',reset);
- region.addEventListener('mouseleave',reset);
- region.addEventListener('pointercancel',reset);
- window.addEventListener('blur',reset);
- window.addEventListener('scroll',reset,{passive:true});
- motionPreference.addEventListener('change',reset);
-});
-
 // Count impact totals from zero when the section enters the viewport.
 (()=>{
  const section=document.querySelector('.impact');
