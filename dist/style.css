@@ -256,3 +256,6 @@
 .site-footer .footer-back-top{font-size:12px}
 .site-footer .footer-back-top>span{width:32px;height:32px;font-size:17px}
 @media(max-width:520px){.site-footer .footer-main{grid-template-columns:1fr;gap:28px}.site-footer .footer-brand-block{grid-column:auto}}
+
+/* Preserve the supplied Noctra brand colors in the original, sharp PNG. */
+.ticker-partner img.partner-noctra{filter:none;opacity:1}

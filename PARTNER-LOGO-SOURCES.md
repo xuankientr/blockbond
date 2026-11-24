@@ -9,4 +9,4 @@ Partner artwork from first-party project websites and files supplied by the site
 
 Logo paths and proportions preserved. CSS displays the logos in monochrome for legibility on the pale ticker background.
 
-- Nostra: original `img-logo-text-primary.svg` supplied by the site owner; preserved byte for byte as `dist/assets/partners/nostra.svg`.
+- Noctra: original PNG from https://noctra.ai/_next/static/media/img-logo-text-primary.037cb203.png, matching the image supplied by the site owner. Stored unchanged as `dist/assets/partners/noctra.png`; no vector tracing or color filter.
