@@ -16,3 +16,5 @@ Logo paths and proportions preserved. CSS displays the logos in monochrome for l
 - KuCoin: original green SVG from the official https://www.kucoin.com/vi header, https://assets.staticimg.com/kc-v2-config/site-config/693bcdd4680db10001fa9856_logo_general_green.svg. Stored unchanged as `dist/assets/partners/kucoin.svg`; official proportions and color preserved.
 
 - BeraPlay and PegaRace: background removed from the two promotional images supplied by the site owner. Transparent full-resolution edits retained in `assets/partners/beraplay-logo.png` and `assets/partners/pegarace-logo.png`; cropped, optimized transparent WebP copies served from `dist/assets/partners/`. Brand colors retained; a subtle shadow keeps the white BeraPlay lettering visible against the pale ticker.
+
+- BingX: original inline SVG from the footer of https://bingx.com/en, decoded without changing its artwork and stored as `dist/assets/partners/bingx.svg`. Transparent monochrome wordmark.
