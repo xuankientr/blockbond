@@ -12,3 +12,5 @@ Logo paths and proportions preserved. CSS displays the logos in monochrome for l
 - Noctra: original PNG from https://noctra.ai/_next/static/media/img-logo-text-primary.037cb203.png, matching the image supplied by the site owner. Stored unchanged as `dist/assets/partners/noctra.png`; no vector tracing or color filter.
 
 - Kingdom Raids: logo extracted from the site owner’s promotional image with its background and surrounding scene removed. Full transparent edit retained in `assets/partners/kingdom-raids-logo.png`; optimized transparent WebP served from `dist/assets/partners/kingdom-raids.webp`. Original wordmark colors are displayed without the ticker’s monochrome filter.
+
+- KuCoin: original green SVG from the official https://www.kucoin.com/vi header, https://assets.staticimg.com/kc-v2-config/site-config/693bcdd4680db10001fa9856_logo_general_green.svg. Stored unchanged as `dist/assets/partners/kucoin.svg`; official proportions and color preserved.

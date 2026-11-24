@@ -263,3 +263,6 @@
 .ticker-partner--kingdom{height:44px}
 .ticker-partner img.partner-kingdom{height:44px;width:112px;filter:none;opacity:1}
 @media(max-width:700px){.ticker-partner--kingdom{height:38px}.ticker-partner img.partner-kingdom{height:38px;width:96px}}
+
+/* Preserve the official KuCoin brand color. */
+.ticker-partner img.partner-kucoin{filter:none;opacity:1}
