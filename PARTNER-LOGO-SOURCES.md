@@ -18,3 +18,5 @@ Logo paths and proportions preserved. CSS displays the logos in monochrome for l
 - BeraPlay and PegaRace: background removed from the two promotional images supplied by the site owner. Transparent full-resolution edits retained in `assets/partners/beraplay-logo.png` and `assets/partners/pegarace-logo.png`; cropped, optimized transparent WebP copies served from `dist/assets/partners/`. Brand colors retained; a subtle shadow keeps the white BeraPlay lettering visible against the pale ticker.
 
 - BingX: original inline SVG from the footer of https://bingx.com/en, decoded without changing its artwork and stored as `dist/assets/partners/bingx.svg`. Transparent monochrome wordmark.
+
+- Bitrue: original transparent PNG from the header of https://www.bitrue.com/, https://static.bitrue.com/img/website/logo_for_next.png. Stored unchanged as `dist/assets/partners/bitrue.png`; displayed with the ticker’s monochrome filter for contrast on the pale background.
