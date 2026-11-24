@@ -266,3 +266,10 @@
 
 /* Preserve the official KuCoin brand color. */
 .ticker-partner img.partner-kucoin{filter:none;opacity:1}
+
+/* Transparent gaming partner logos retain their original colors. */
+.ticker-partner--beraplay{height:56px}
+.ticker-partner img.partner-beraplay{width:112px;height:56px;filter:drop-shadow(0 1px 1px rgba(20,77,53,.7));opacity:1}
+.ticker-partner--pegarace{width:144px;height:48px}
+.ticker-partner img.partner-pegarace{width:132px;height:48px;filter:none;opacity:1}
+@media(max-width:700px){.ticker-partner--beraplay{height:48px}.ticker-partner img.partner-beraplay{width:96px;height:48px}.ticker-partner--pegarace{width:124px;height:42px}.ticker-partner img.partner-pegarace{width:112px;height:42px}}
